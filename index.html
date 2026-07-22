@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="awesome website built with HTML, CSS, and JavaScript." />
+  <title>What's a Website? | Home</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+    header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .header-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+    }
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .menu-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      border: 0;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      cursor: pointer;
+    }
+    nav {
+      width: 100%;
+      display: none;
+    }
+    nav.open { display: block; }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.75rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    nav a {
+      display: block;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      background: #eff6ff;
+    }
+    nav a:hover { background: #dbeafe; }
+    .hero {
+      padding: 3.5rem 0 2rem;
+    }
+    .hero-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    h1, h2, h3 { line-height: 1.2; }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin: 0; }
+    .lead { color: var(--muted); font-size: 1.05rem; max-width: 60ch; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 1.2rem;
+      border-radius: 0.8rem;
+      font-weight: 700;
+      border: 1px solid var(--primary);
+    }
+    .btn.primary { background: var(--primary); color: white; }
+    .btn.primary:hover { background: var(--primary-dark); }
+    .btn.secondary { background: white; color: var(--primary); }
+    .btn.secondary:hover { background: #eff6ff; }
+    .card-section { padding: 1rem 0 3rem; }
+    .section-title { font-size: 1.75rem; margin-bottom: 1rem; }
+    .grid-3 {
+      display: grid;
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    }
+    .card p { color: var(--muted); margin-bottom: 0; }
+    footer {
+      background: #0f172a;
+      color: #e2e8f0;
+      margin-top: 2rem;
+    }
+    .footer-wrap {
+      padding: 1.25rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .menu-btn { display: none; }
+      nav {
+        display: block !important;
+        width: auto;
+      }
+      nav ul {
+        flex-direction: row;
+        margin-top: 0;
+      }
+      nav a { background: transparent; }
+      nav a:hover { background: #eff6ff; }
+      .hero-grid { grid-template-columns: 1.2fr 0.8fr; align-items: center; }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .footer-wrap {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-wrap">
+      <a class="brand" href="index.html">WebDev</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNav">Menu</button>
+      <nav id="siteNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About / Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-grid">
+        <div>
+          <span class="badge" id="dateBadge">Loading date...</span>
+          <h1>Building websites that are clean, responsive, and easy to use.</h1>
+          <p class="lead">
+            Modern web development combines semantic HTML, CSS styling, and JavaScript to create pages that look good
+            and work well on different devices. This site is a simple example of those core ideas.
+          </p>
+          <div class="button-row">
+            <a class="btn primary" href="about.html">See Services</a>
+            <a class="btn secondary" href="contact.html">Get in Touch</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Why this matters</h2>
+          <p>
+            Good web design uses contrast, alignment, repetition, and proximity to make content easier to read.
+            A responsive layout also helps the page adapt to phones, tablets, and desktops.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card-section container">
+      <h2 class="section-title">Core ideas used in this project</h2>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Semantic HTML</h3>
+          <p>Headers, sections, nav, and footer tags help organize content clearly.</p>
+        </article>
+        <article class="card">
+          <h3>Responsive CSS</h3>
+          <p>Flexible grids and mobile-first styling improve the user experience on any screen.</p>
+        </article>
+        <article class="card">
+          <h3>JavaScript</h3>
+          <p>Small interactive features make the website feel more dynamic and useful.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap" id="footer">
+      <p>Sir Ramir the goat</p>
+      <p>&copy; jqjaque@fit.edu.ph</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const siteNav = document.getElementById("siteNav");
+    const dateBadge = document.getElementById("dateBadge");
+
+    menuBtn.addEventListener("click", () => {
+      const isOpen = siteNav.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    const now = new Date();
+    dateBadge.textContent = now.toLocaleDateString(undefined, {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+  </script>
+</body>
+</html>

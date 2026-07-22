@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact page with a simple form and JavaScript validation for a modern web development project." />
+  <title>What's a Website? | Contact</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-wrap">
+      <a class="brand" href="index.html">WebDev</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNav">Menu</button>
+      <nav id="siteNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About / Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="content">
+      <h1>Contact</h1>
+      <p class="lead">
+        Use this form to test simple JavaScript validation. Required fields must be completed before the message can be sent.
+      </p>
+    </section>
+
+    <section class="form-wrap">
+      <div class="card">
+        <h2>Send a message</h2>
+        <form id="contactForm" novalidate>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your email" />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+
+          <button class="btn primary" type="submit">Submit</button>
+          <p id="formMessage" class="message" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Why this page matters</h2>
+        <p>
+          A contact form is a common part of websites. Validation helps catch missing information early and makes the
+          experience smoother for users.
+        </p>
+        <p>
+          This page also supports the project’s JavaScript requirement by giving immediate feedback when the form is submitted.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap" id="footer">
+      <p>Sir Ramir the goat</p>
+      <p>&copy; jqjaque@fit.edu.ph</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
